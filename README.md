@@ -15,7 +15,9 @@ git clone [https://github.com/Neferpitow/playwright-qa-portfolio.git](https://gi
 cd playwright-qa-portfolio
 
 2. Install dependencies:
+```bash
 npm install
 
 3. Run the tests :
+```bash
 npx playwright test --ui
