@@ -10,14 +10,11 @@ Welcome to my test automation portfolio! This repository demonstrates my skills 
 ## ⚙️ How to Run the Tests
 
 1. Clone the repository:
-```bash
-git clone [https://github.com/Neferpitow/playwright-qa-portfolio.git](https://github.com/Neferpitow/playwright-qa-portfolio.git)
+git clone https://github.com/Neferpitow/playwright-qa-portfolio.git
 cd playwright-qa-portfolio
 
 2. Install dependencies:
-```bash
 npm install
 
-3. Run the tests :
-```bash
+3. Run the tests:
 npx playwright test --ui
