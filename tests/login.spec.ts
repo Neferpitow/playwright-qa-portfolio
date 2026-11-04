@@ -49,3 +49,27 @@ test("TEST-04: Devrait afficher une erreur si les champs sont vides", async ({ p
     await expect(page.locator("[data-test='error']")).toBeVisible();
 
 }); 
+
+// --- TEST 18 : Log out ---
+test("TEST-18 : Log out via the side menu and verify redirection to login page", async ({ page }) => {
+  // 1. Log in
+  await page.goto("https://www.saucedemo.com/");
+  await page.locator("#user-name").fill("standard_user");
+  await page.locator("#password").fill("secret_sauce");
+  await page.locator("#login-button").click();
+
+  // 2. Verify that you are indeed on the products page
+  await expect(page).toHaveURL(/.*inventory.html/);
+
+  // 3. Open the side menu ("Open Menu" button at the top left)
+  await page.locator("#react-burger-menu-btn").click();
+
+  // 4. Click the "Logout" button
+  const logoutLink = page.locator("#logout_sidebar_link");
+  await expect(logoutLink).toBeVisible();
+  await logoutLink.click();
+
+  // 5. Verify that you are correctly redirected to the initial login page
+  await expect(page).toHaveURL("https://www.saucedemo.com/");
+  await expect(page.locator("#login-button")).toBeVisible();
+});
