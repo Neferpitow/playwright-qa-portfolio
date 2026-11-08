@@ -40,6 +40,11 @@ export default defineConfig({
     },
 
     {
+      name: "microsoft-edge",
+      use: { ...devices["Desktop Edge"], channel: "msedge" },
+    },
+
+    {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
